@@ -1,56 +1,71 @@
 <!DOCTYPE html>
+<!--
+    Copyright 2013 Seth Davenport
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+-->
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>ShrinkWrap Demo</title>
-		<style type="text/css">
-			body {
-				color: white;
-				background: black;
-			}
-			
-			div#container1 {
-				position: absolute;
-				top: 150px;
-				left: 30px;
-				width: 10%;
-				height: 15%;
-				border: dashed red 1px;
-			}
-			
-			div#container2 {
-				position: absolute;
-				top: 30%;
-				left: 30%;
-				width: 30%;
-				height: 50%;
-				border: dashed red 1px;
-			}
-		</style>
-		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-		<script type="text/javascript" src="jquery.shrinkwrap.js"></script>
-		<script>
-		    $(document).ready(function(){
-			$("img").shrinkWrap();
-		    });
-		</script>
-	</head>
-	<body>
-	
-		<h1>Demo for the Shrinkwrap JQuery Plugin</h1>
-		
-		<p>Resize your browser window and see shrinkwrap in action!</p>
-		
-		<div id="content">
-			<div id="container1">
-				<img src="demo.jpg">
-			</div>
-		
-			<div id="container2">
-				<img src="demo.jpg">
-			</div>
-		</div>
-		
-	</body>
+    <head>
+        <meta charset="utf-8">
+        <title>ShrinkWrap Demo</title>
+        <style type="text/css">
+            body {
+                color: white;
+                background: black;
+            }
+            
+            div#container1 {
+                position: absolute;
+                top: 150px;
+                left: 30px;
+                width: 10%;
+                height: 15%;
+                border: dashed red 1px;
+            }
+            
+            div#container2 {
+                position: absolute;
+                top: 30%;
+                left: 30%;
+                width: 30%;
+                height: 50%;
+                border: dashed red 1px;
+            }
+        </style>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <script type="text/javascript" src="jquery.shrinkwrap.js"></script>
+        <script>
+            $(document).ready(function(){
+            $("img").shrinkWrap();
+            });
+        </script>
+    </head>
+    <body>
+    
+        <h1>Demo for the Shrinkwrap JQuery Plugin</h1>
+        
+        <p>Resize your browser window and see shrinkwrap in action!</p>
+        
+        <div id="content">
+            <div id="container1">
+                <img src="demo.jpg">
+            </div>
+        
+            <div id="container2">
+                <img src="demo.jpg">
+            </div>
+        </div>
+        
+    </body>
 <html>
 
