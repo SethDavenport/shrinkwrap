@@ -12,19 +12,14 @@ JQuery plugin that scales an HTML image to fill its parent container, while pres
 
 ```javascript
 $(window).load(function() { $("img").shrinkWrap(); });
+$(window).resize(function() { $("img").shrinkWrap(); });
 ```
 
 <img src="boxed.png">
 
 * Image is constrained to its container's height and width,
 * Aspect ratio is maintained,
-* Image is centered vertically and horizontally in its container.
-
-If your layout resizes the container when the window size changes, that's cool too:
-
-```javascript
-$(window).resize(function() { $("img").shrinkWrap(); });
-```
-
+* Image is centered vertically and horizontally in its container,
+* If container is resized dynamically, the image is resized as well.
 
 [Complete example file](./demo.html)
