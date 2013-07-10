@@ -15,13 +15,23 @@
 		$("img").shrinkWrap();
             });
         </script>
+        <style type="text/css">
+	    #container {
+	        position: absolute;
+	        top: 150pt;
+	        left: 50pt;
+	        right: 50pt;
+	        bottom: 50pt;
+	        border: solid red 1px;
+	    }
+        </style>
     </head>
     <body>
     	<h1>ShrinkWrap Demo</h1>
     
     	<p>Resize your browser window and see what happens.</p>
     	
-        <div style="border: solid red 1px; height: 60%; width: 75%; margin: auto">
+        <div id="container">
             <img src="demo.jpg">
         </div>
     </body>
