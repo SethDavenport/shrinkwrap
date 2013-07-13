@@ -33,44 +33,47 @@
         },
         
         /**
-         * Fits an item inside its container's box.  Scaling preserves aspect ratio.
+         * Fits an item inside its container's box.  Scaling preserves aspect 
+         * ratio.
          */
         fitToParentBox: function() {
-            return this.each(function() {
-                var item = $(this);
-                var box = $(this).parent();
-                
-                // Figure out which dimension needs to be scaled the most.
-                var widthDelta = box.width() - item.width();
-                var heightDelta = box.height() - item.height();
+            var item = $(this);
+            var box = item.parent();
 
-                newWidth = item.width();
-                newHeight = item.height();
-                if (widthDelta > heightDelta) {
-                    newWidth = 'auto';
-                    newHeight = '100%';
-                }
-                else {
-                    newWidth = '100%';
-                    newHeight = 'auto';
-                }
+            // Figure out which dimension needs to be scaled the most.
+            var widthDelta = box.width() - item.width();
+            var heightDelta = box.height() - item.height();
 
-                item.css('position', 'relative');
-                item.css('width', newWidth);
-                item.css('height', newHeight);
-            });
+            newWidth = item.width();
+            newHeight = item.height();
+            if (widthDelta > heightDelta) {
+                newWidth = 'auto';
+                newHeight = '100%';
+            }
+            else {
+                newWidth = '100%';
+                newHeight = 'auto';
+            }
+
+            item.css('position', 'relative');
+            item.css('width', newWidth);
+            item.css('height', newHeight);
+            
+            return item;
         },
         
         /**
          * Centres an item inside its container's box.
          */
         centerInParentBox: function() {
-            return this.each(function() {
+            return $(this).each(function() {
                 var item = $(this);
-                var box = $(this).parent();
-                
+                var box = item.parent();
+
                 var widthDelta = box.width() - item.width();
                 var heightDelta = box.height() - item.height();
+
+                console.log(box.height() + ", " + item.height() + ", " + heightDelta);
 
                 item.css('position', 'relative');
                 item.css('left', (widthDelta / 2) + 'px');
