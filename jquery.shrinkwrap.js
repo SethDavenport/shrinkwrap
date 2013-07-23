@@ -30,15 +30,11 @@
     $.fn.extend({
         shrinkWrap: function() {
             return $(this).fitToParentBox().centerInParentBox();
-        }
-    });
-})(jQuery);
-
-/**
- * Fits an item inside its container's box.  Scaling preserves aspect ratio.
- */
-(function($) {
-    $.fn.extend({
+        },
+        
+        /**
+         * Fits an item inside its container's box.  Scaling preserves aspect ratio.
+         */
         fitToParentBox: function() {
             return this.each(function() {
                 var item = $(this);
@@ -63,15 +59,11 @@
                 item.css('width', newWidth);
                 item.css('height', newHeight);
             });
-        }
-    });
-})(jQuery);
-
-/**
- * Centres an item inside its container's box.
- */
-(function($) {
-    $.fn.extend({
+        },
+        
+        /**
+         * Centres an item inside its container's box.
+         */
         centerInParentBox: function() {
             return this.each(function() {
                 var item = $(this);
@@ -85,5 +77,5 @@
                 item.css('top', (heightDelta / 2)  + 'px');
             });
         }
-    })
+    });
 })(jQuery);
