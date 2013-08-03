@@ -29,7 +29,9 @@
 (function($) {
     $.fn.extend({
         shrinkWrap: function() {
-            return $(this).fitToParentBox().centerInParentBox();
+            return $(this)
+                .fitToParentBox()
+                .centerInParentBox();
         },
         
         /**
@@ -37,29 +39,36 @@
          * ratio.
          */
         fitToParentBox: function() {
-            var item = $(this);
-            var box = item.parent();
+            return $(this).each(function() {
+                var item = $(this);
+                var box = item.parent();
 
-            // Figure out which dimension needs to be scaled the most.
-            var widthDelta = box.width() - item.width();
-            var heightDelta = box.height() - item.height();
+                var itemOuterWidth = item.outerWidth(true);
+                var itemOuterHeight = item.outerHeight(true);
+                var boxInnerWidth = box.width();
+                var boxInnerHeight = box.height();
 
-            newWidth = item.width();
-            newHeight = item.height();
-            if (widthDelta > heightDelta) {
-                newWidth = 'auto';
-                newHeight = '100%';
-            }
-            else {
-                newWidth = '100%';
-                newHeight = 'auto';
-            }
+                // Figure out how much of the item's outerWidth is taken up by
+                // margins, border, and padding.
+                var itemBoxPaddingX = itemOuterWidth - item.width();
+                var itemBoxPaddingY = itemOuterHeight - item.height();
 
-            item.css('position', 'relative');
-            item.css('width', newWidth);
-            item.css('height', newHeight);
-            
-            return item;
+                // Figure out which dimension needs to be scaled the most.
+                var widthDelta = boxInnerWidth - itemOuterWidth;
+                var heightDelta = boxInnerHeight - itemOuterHeight;
+
+                item.css('display', 'block');
+                item.css('position', 'relative');
+                
+                if (widthDelta > heightDelta) {
+                    item.css('width', 'auto');
+                    item.css('height', boxInnerHeight - itemBoxPaddingY);
+                }
+                else {
+                    item.css('width', boxInnerWidth - itemBoxPaddingX);
+                    item.css('height', 'auto');
+                }
+            });
         },
         
         /**
@@ -70,11 +79,10 @@
                 var item = $(this);
                 var box = item.parent();
 
-                var widthDelta = box.width() - item.width();
-                var heightDelta = box.height() - item.height();
+                var widthDelta = box.width() - item.outerWidth(true);
+                var heightDelta = box.height() - item.outerHeight(true);
 
-                console.log(box.height() + ", " + item.height() + ", " + heightDelta);
-
+                item.css('display', 'block');
                 item.css('position', 'relative');
                 item.css('left', (widthDelta / 2) + 'px');
                 item.css('top', (heightDelta / 2)  + 'px');

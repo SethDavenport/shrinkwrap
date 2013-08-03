@@ -25,22 +25,30 @@
             }
             
             div#container1 {
-                position: absolute;
-                top: 150px;
-                left: 30px;
-                width: 10%;
-                height: 15%;
+                width: 50%;
+                height: 200px;
                 border: dashed red 1px;
+                margin-left: auto;
+                margin-right: auto;
             }
             
             div#container2 {
-                position: absolute;
-                top: 30%;
-                left: 30%;
                 width: 30%;
-                height: 50%;
-                border: dashed red 1px;
+                height: 300px;
+                border-radius: 4px;
+                border: solid red 5px;
+                padding: 3px;
+                margin-left: auto;
+                margin-right: auto;
             }
+            
+            div#container2 img {
+                border-radius: 4px;
+                border: solid white 2px;
+                padding: 6px;
+                margin: 7px;
+            }
+            
         </style>
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
         <script type="text/javascript" src="jquery.shrinkwrap.js"></script>
@@ -61,15 +69,19 @@
         <p>Resize your browser window and see shrinkwrap in action!</p>
         
         <div id="content">
+            
+            <p>Basic Example</p>
             <div id="container1">
                 <img src="demo.jpg">
             </div>
         
+            <p>Example with Border, Margins, Padding</p>
             <div id="container2">
                 <img src="demo.jpg">
             </div>
+            
         </div>
         
     </body>
-<html>
+</html>
 
