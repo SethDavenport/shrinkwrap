@@ -1,56 +1,10 @@
 <!DOCTYPE html>
-<!--
-    Copyright 2013 Seth Davenport
-
-   Licensed under the Apache License, Version 2.0 (the "License");
-   you may not use this file except in compliance with the License.
-   You may obtain a copy of the License at
-
-       http://www.apache.org/licenses/LICENSE-2.0
-
-   Unless required by applicable law or agreed to in writing, software
-   distributed under the License is distributed on an "AS IS" BASIS,
-   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-   See the License for the specific language governing permissions and
-   limitations under the License.
--->
 <html>
     <head>
-        <meta charset="utf-8">
-        <title>ShrinkWrap Demo</title>
-        <style type="text/css">
-            body {
-                color: white;
-                background: black;
-            }
-            
-            div#container1 {
-                width: 50%;
-                height: 200px;
-                border: dashed red 1px;
-                margin-left: auto;
-                margin-right: auto;
-            }
-            
-            div#container2 {
-                width: 30%;
-                height: 300px;
-                border-radius: 4px;
-                border: solid red 5px;
-                padding: 3px;
-                margin-left: auto;
-                margin-right: auto;
-            }
-            
-            div#container2 img {
-                border-radius: 4px;
-                border: solid white 2px;
-                padding: 6px;
-                margin: 7px;
-            }
-            
-        </style>
-        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <script type="text/javascript" 
+            src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js">
+        </script>
+
         <script type="text/javascript" src="jquery.shrinkwrap.js"></script>
         <script>
             $(window).load(function(){
@@ -63,25 +17,8 @@
         </script>
     </head>
     <body>
-    
-        <h1>Demo for the Shrinkwrap JQuery Plugin</h1>
-        
-        <p>Resize your browser window and see shrinkwrap in action!</p>
-        
-        <div id="content">
-            
-            <p>Basic Example</p>
-            <div id="container1">
-                <img src="demo.jpg">
-            </div>
-        
-            <p>Example with Border, Margins, Padding</p>
-            <div id="container2">
-                <img src="demo.jpg">
-            </div>
-            
+        <div style="border: solid red 1px; height: 150px; width: 200px;">
+            <img src="demo.jpg">
         </div>
-        
     </body>
 </html>
-
