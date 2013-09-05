@@ -1,8 +1,8 @@
-/** 
+/**
  * JQuery plugin that scales and centers a block element inside its parent's
  * bounding box.  Mainly designed for images.  Scaling preserves aspect ratio,
  * and centering is both horizontal and vertical.
- * 
+ *
  * Author: Seth Davenport, http://www.sethdavenport.com
  *
  *  Copyright 2013 Seth Davenport
@@ -22,7 +22,7 @@
 
 /**
  * Shrinkwrap: scales and centers an image inside its container's box.
- * 
+ *
  * Scaling preserves aspect ratio.
  * Centering is both horizontal and vertical.
  */
@@ -33,9 +33,9 @@
                 .fitToParentBox()
                 .centerInParentBox();
         },
-        
+
         /**
-         * Fits an item inside its container's box.  Scaling preserves aspect 
+         * Fits an item inside its container's box.  Scaling preserves aspect
          * ratio.
          */
         fitToParentBox: function() {
@@ -57,9 +57,7 @@
                 var widthDelta = boxInnerWidth - itemOuterWidth;
                 var heightDelta = boxInnerHeight - itemOuterHeight;
 
-                item.css('display', 'block');
                 item.css('position', 'relative');
-                
                 if (widthDelta > heightDelta) {
                     item.css('width', 'auto');
                     item.css('height', boxInnerHeight - itemBoxPaddingY);
@@ -70,7 +68,7 @@
                 }
             });
         },
-        
+
         /**
          * Centres an item inside its container's box.
          */
@@ -82,7 +80,6 @@
                 var widthDelta = box.width() - item.outerWidth(true);
                 var heightDelta = box.height() - item.outerHeight(true);
 
-                item.css('display', 'block');
                 item.css('position', 'relative');
                 item.css('left', (widthDelta / 2) + 'px');
                 item.css('top', (heightDelta / 2)  + 'px');
