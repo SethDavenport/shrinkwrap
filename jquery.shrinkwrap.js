@@ -27,6 +27,8 @@
  * Centering is both horizontal and vertical.
  */
 (function($) {
+    "use strict";
+    
     $.fn.extend({
         shrinkWrap: function() {
             return $(this)
